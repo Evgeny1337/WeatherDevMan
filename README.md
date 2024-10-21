@@ -14,20 +14,21 @@
     cd <название_папки>
 2. Установите зависимости:
     Убедитесь, что у вас установлен pip, затем выполните:
-    pip install -r req.txt
-    
+    `pip install -r req.txt ` 
 
 Использование:
 - Как самостоятельная программа:
     После установки зависимостей просто выполните:
-    python weather.py
+    `python weather.py` 
 - Как модуль:
     Вы можете импортировать скрипт в своем проекте следующим образом:
-    from weather import main
-    result = main()
-    for item in result:
-        response = requests.get(url=item[0],params=item[1])
-        print(response.text)
+
+```
+from weather import main
+    responses = main()
+    for response in responses:
+        print(response)
+``` 
     
 Зависимости:
 Все необходимые зависимости хранятся в файле req.txt. Убедитесь, что все библиотеки установлены перед использованием программы.
