@@ -1,15 +1,19 @@
 import requests
 
-def main():
+def get_urls():
     places = ['Череповец', 'svo', 'Лондон']
-    params = {'n':'','T':'','q':'','M':'','lang':'ru'}
     for place in places:
-        url = f'http://wttr.in/{place}'
-        yield [url,params]
+        yield f'http://wttr.in/{place}'
+
+def main():
+    params = {'n':'','T':'','q':'','M':'','lang':'ru'}
+    urls = get_urls()
+    for url in urls:
+        response = requests.get(url=url,params=params)
+        yield response.text
 
 if __name__ == '__main__':
-    result = main()
-    for item in result:
-        response = requests.get(url=item[0],params=item[1])
-        response.raise_for_status()
-        print(response.text)
+    responses = main()
+    for response in responses:
+        print(response)
+
