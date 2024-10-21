@@ -23,7 +23,7 @@
 - Как модуль:
     Вы можете импортировать скрипт в своем проекте следующим образом:
 
-```
+```python
 from weather import main
     responses = main()
     for response in responses:
