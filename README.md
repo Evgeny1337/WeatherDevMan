@@ -29,9 +29,7 @@
 
 ```python
 from weather import main
-    responses = main()
-    for response in responses:
-        print(response)
+main()
 ``` 
     
 Зависимости:
